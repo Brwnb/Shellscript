@@ -6,12 +6,20 @@
 
 echo 
 echo 
+echo $*
+echo $1 $2 | egrep [0-9] >> /dev/null
+if [[ $? -eq 0 ]]; then
+	sum=$(echo $1 + $2 | bc)
+	echo "The result is: " $sum 
+	echo
+	echo
 
-echo -n "Enter with the two  value: "
+else
+	echo
+	echo
+	echo "The Values aren't numbers "
+	echo 
+	echo
 
-sum=$(echo $1 + $2 | bc)
+fi
 
-echo "The result is: " $sum 
-
-echo
-echo
