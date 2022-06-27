@@ -7,13 +7,22 @@
 echo 
 echo 
 
-echo -n "Enter with the first value: "
-read first
+read -p "Enter with the first value: " first
+read -p "Enter with the second value: " second
 
-echo -n "Enter with the second value: "
-read second
+if [[ -z $first || -z $second ]];
+then
+	echo "Insert a value"
+else
+	echo $first $second | egrep '[0-9]' > /dev/null
+	if [[ $? -eq 0 ]];
+	then
+		sum=$(echo $first + $second | bc)
 
-sum=$(expr $first + $second)
-
-echo "The result is: " $sum 
-
+		echo "The result is: " $sum 
+		echo
+		echo
+	else
+		echo "Insert a number in the program"
+	fi
+fi

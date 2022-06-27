@@ -8,7 +8,7 @@
 # 
 minimun=$(echo $* | wc -w)
 if [[ $minimun -gt 1 ]]; then
-	echo $1 $2 | egrep [0-9] >> /dev/null
+	echo $1 $2 | egrep [0-9] > /dev/null
 	if [[ $? -eq 0 ]]; then
 		sum=$(echo $1 + $2 | tr , . | bc)
 		echo
