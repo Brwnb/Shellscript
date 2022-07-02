@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# Description: Script of the exemple to command read.
-# 		The user must input two value, the script
-#		will sum them and print on the screen
-
+# Description: Script of the exemple to the command read.
+# 		The user must input two values, the script
+#		will sum them and print on the screen.
+#		
+#		I'm cheking if the user input some values or not and 
+#		if the values are numbers.
 echo 
 echo 
 
